@@ -44,4 +44,5 @@ const todoSchema: Schema = new Schema(
 todoSchema.index({ username: 1, email: 1 }, { unique: true });
 
 // Export the Mongoose model
-export const Todo: Model<ITodo> = mongoose.model<ITodo>("User", todoSchema);
+export const Todo: Model<ITodo> =
+  mongoose.models.Todo || mongoose.model<ITodo>("Todo", todoSchema);
