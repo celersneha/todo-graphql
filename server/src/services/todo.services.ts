@@ -35,6 +35,7 @@ class TodoService {
         return {
           success: false,
           message: "Title and User ID are required",
+          todo: null,
         };
       }
       const todo = await Todo.create({
@@ -55,6 +56,7 @@ class TodoService {
       return {
         success: false,
         message: "Error creating todo",
+        todo: null,
       };
     }
   }
@@ -73,6 +75,7 @@ class TodoService {
       return {
         success: false,
         message: "Todo not found or update failed",
+        todo: null,
       };
     }
 
@@ -91,8 +94,14 @@ class TodoService {
         return {
           success: false,
           message: "Todo not found or already deleted",
+          todo: null,
         };
       }
+      return {
+        success: true,
+        message: "Todo deleted successfully",
+        todo: deletedTodo,
+      };
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
@@ -100,6 +109,7 @@ class TodoService {
       return {
         success: false,
         message: "Error deleting todo",
+        todo: null,
       };
     }
   }
@@ -116,6 +126,7 @@ class TodoService {
         return {
           success: false,
           message: "Todo not found",
+          todo: null,
         };
       }
 
@@ -128,6 +139,7 @@ class TodoService {
         return {
           success: false,
           message: "Failed to toggle todo completion status",
+          todo: null,
         };
       }
     } catch (error) {
@@ -137,6 +149,7 @@ class TodoService {
       return {
         success: false,
         message: "Error toggling todo completion status",
+        todo: null,
       };
     }
   }
