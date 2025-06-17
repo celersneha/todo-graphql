@@ -44,4 +44,5 @@ const userSchema: Schema<IUser> = new Schema(
 userSchema.index({ username: 1, email: 1 }, { unique: true });
 
 // Export the Mongoose model
-export const User: Model<IUser> = mongoose.model<IUser>("User", userSchema);
+export const User: Model<IUser> =
+  mongoose.models.User || mongoose.model<IUser>("User", userSchema);
