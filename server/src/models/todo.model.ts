@@ -40,8 +40,7 @@ const todoSchema: Schema = new Schema(
   { timestamps: true } // Automatically adds createdAt and updatedAt fields
 );
 
-// Compound index for username and email
-todoSchema.index({ username: 1, email: 1 }, { unique: true });
+todoSchema.index({ userId: 1 });
 
 // Export the Mongoose model
 export const Todo: Model<ITodo> =
