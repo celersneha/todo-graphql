@@ -1,17 +1,18 @@
 export const userTypeDefs = `#graphql
 
 # User Type Definitions
-type User {
-  _id: ID!
+type User {  _id: ID!
   username: String! 
   email: String!
   createdAt: String
-  updatedAt: String}
+  updatedAt: String
+}
 
 # Auth Response Type Definitions
 type AuthResponse {
-success: Boolean!
+    success: Boolean!
     message: String
+    token: String
     user: User
 }
 
