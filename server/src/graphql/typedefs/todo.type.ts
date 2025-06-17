@@ -11,6 +11,20 @@ type Todo {
     updatedAt: String!
 }
 
+#Response Types
+type TodoResponse {
+    success: Boolean!
+    message: String!
+    todo: Todo
+}
+
+type TodosResponse {
+    success: Boolean!
+    message: String!
+    todos: [Todo!]
+    
+}
+
 #input type definitions
 input CreateTodoInput {
     title: String!
@@ -28,15 +42,15 @@ input UpdateTodoInput {
 }
 
 type Query {
-    getAllTodos(userId: ID!): [Todo!]!
-    getTodoById(id: ID!): Todo!
+    getAllTodos(userId: ID!): TodosResponse!
+    getTodoById(id: ID!): TodoResponse!
 }
 
 type Mutation {
-    createTodo(input: CreateTodoInput!): Todo!
-    updateTodo(input: UpdateTodoInput!): Todo!
-    deleteTodo(id: ID!): Boolean!
-    toggleTodoCompletion(id: ID!): Todo!
+    createTodo(input: CreateTodoInput!): TodoResponse!
+    updateTodo(input: UpdateTodoInput!): TodoResponse!
+    deleteTodo(id: ID!): TodoResponse!
+    toggleTodoCompletion(id: ID!): TodoResponse!
 }
 
 

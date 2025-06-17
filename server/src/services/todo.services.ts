@@ -79,7 +79,11 @@ class TodoService {
       };
     }
 
-    return updatedTodo;
+    return {
+      success: true,
+      message: "Todo updated successfully",
+      todo: updatedTodo,
+    };
   }
 
   //Method to delete a todo
@@ -142,6 +146,11 @@ class TodoService {
           todo: null,
         };
       }
+      return {
+        success: true,
+        message: "Todo completion status toggled successfully",
+        todo: updatedTodo,
+      };
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
