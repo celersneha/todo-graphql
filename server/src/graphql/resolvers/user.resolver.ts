@@ -28,13 +28,15 @@ const queries = {
 
 const mutations = {
   // Create a new user
-  createUser: async (_: any, payload: CreateUserPayload) => {
+  createUser: async (_: any, args: { input: CreateUserPayload }) => {
+    const { input: payload } = args;
     const res = await UserService.createUser(payload);
     return res;
   },
 
   // Login an existing user
-  loginUser: async (_: any, payload: LoginUserPayload) => {
+  loginUser: async (_: any, args: { input: LoginUserPayload }) => {
+    const { input: payload } = args;
     const res = await UserService.loginUser(payload);
     return res;
   },
