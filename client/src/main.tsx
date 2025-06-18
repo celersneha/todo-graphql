@@ -1,10 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-createRoot(document.getElementById('root')!).render(
+import "./index.css";
+import App from "./App.tsx";
+
+import { ApolloProvider } from "@apollo/client";
+import client from "./apollo-client/apollo-client.tsx";
+import { AuthProvider } from "./context/AuthContext.tsx";
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <ApolloProvider client={client}>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </ApolloProvider>
+  </StrictMode>
+);
