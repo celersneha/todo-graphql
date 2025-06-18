@@ -42,7 +42,7 @@ input UpdateTodoInput {
 }
 
 type Query {
-    getAllTodos(userId: ID!): TodosResponse!
+    getAllTodos: TodosResponse!
     getTodoById(id: ID!): TodoResponse!
 }
 
