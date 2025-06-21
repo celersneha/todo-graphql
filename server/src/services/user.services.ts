@@ -37,11 +37,14 @@ class UserService {
     );
     return token;
   }
-
   private static async verifyPassword(
     password: string,
     hashedPassword: string
   ) {
+    console.log(password, hashedPassword);
+    if (!password || !hashedPassword) {
+      throw new Error("Password and hash are required for comparison");
+    }
     const isMatch = await bcrypt.compare(password, hashedPassword);
     return isMatch;
   }
@@ -136,8 +139,11 @@ class UserService {
           user: null,
         };
       }
-
-      const isPasswordValid = this.verifyPassword(password, user.password);
+      console.log("User found:", user);
+      const isPasswordValid = await this.verifyPassword(
+        password,
+        user.password
+      );
 
       if (!isPasswordValid) {
         return {
