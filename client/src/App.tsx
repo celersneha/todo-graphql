@@ -1,5 +1,9 @@
+import Header from "./components/layout/Header";
+import { useAuth } from "./context/AuthContext";
+
 function App() {
-  return <div>App</div>;
+  const { user } = useAuth();
+  return <Header />;
 }
 
 export default App;
