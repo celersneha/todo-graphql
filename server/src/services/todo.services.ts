@@ -44,6 +44,7 @@ class TodoService {
         completed: false,
         userId: new mongoose.Types.ObjectId(userId),
       });
+
       return {
         success: true,
         message: "Todo created successfully",
@@ -135,7 +136,8 @@ class TodoService {
       }
 
       const updatedTodo = await Todo.findOneAndUpdate(
-        { id, userId, completed: !todo.completed },
+        { _id: id, userId },
+        { completed: !todo.completed },
         { new: true, runValidators: true }
       );
 
