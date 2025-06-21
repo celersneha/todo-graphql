@@ -13,8 +13,7 @@ import { LOGIN_USER, CREATE_USER } from "../graphql/mutation";
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (email: string, password: string) => void;
-  register: (username: string, email: string, password: string) => void;
+  login: (token: string, userData: User) => void;
   logout: () => void;
   refetchUser: () => void;
 }
@@ -44,57 +43,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     errorPolicy: "ignore",
   });
 
-  const [loginUserMutation, { loading: loginLoading }] =
-    useMutation(LOGIN_USER);
-  const [createUserMutation, { loading: createUserLoading }] =
-    useMutation(CREATE_USER);
-
   useEffect(() => {
     if (data?.getUser) {
       setUser(data.getUser);
     }
   }, [data]);
 
-  const login = async (email: string, password: string) => {
-    try {
-      const { data } = await loginUserMutation({
-        variables: {
-          input: { email, password },
-        },
-      });
-      if (data?.loginUser.success) {
-        localStorage.setItem("token", data.loginUser.token);
-        setUser(data.loginUser.user);
-        return true;
-      }
-      return false;
-    } catch (error) {
-      console.error("Login error:", error);
-      return false;
-    }
-  };
-
-  const register = async (
-    username: string,
-    email: string,
-    password: string
-  ) => {
-    try {
-      const { data } = await createUserMutation({
-        variables: {
-          input: { username, email, password },
-        },
-      });
-      if (data?.createUser.success) {
-        localStorage.setItem("token", data.createUser.token);
-        setUser(data.createUser.user);
-        return true;
-      }
-      return false;
-    } catch (error) {
-      console.error("Registration error:", error);
-      return false;
-    }
+  const login = (token: string, userData: User) => {
+    localStorage.setItem("token", token);
+    setUser(userData);
   };
 
   const logout = () => {
@@ -111,10 +68,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     user,
     loading: loading && !!token,
     login,
-    register,
     logout,
     refetchUser,
-    isAuthLoading: loginLoading || createUserLoading,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
