@@ -10,6 +10,12 @@ function App() {
   if (user) {
     return (
       <>
+        <div className="absolute bottom-0 left-10 w-24 h-24 rounded-full bg-[#6949ff]/5 animate-pulse"></div>
+        <div className="absolute top-50 left-40 w-32 h-32 rounded-full bg-[#6949ff]/5 animate-pulse"></div>
+        <div className="absolute bottom-30 left-70 w-24 h-24 rounded-full bg-[#6949ff]/5 animate-pulse"></div>
+        <div className="absolute top-50 right-40 w-32 h-32 rounded-full bg-[#6949ff]/5 animate-pulse"></div>
+        <div className="absolute bottom-30 right-70 w-24 h-24 rounded-full bg-[#6949ff]/5 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-[#c961ff]/5 animate-pulse"></div>
         <Header />
         <TodoInputForm />
         <TodoList />
