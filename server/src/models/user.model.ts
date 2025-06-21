@@ -29,7 +29,7 @@ const userSchema: Schema<IUser> = new Schema(
       type: String,
       required: true,
       minlength: 6,
-      select: false,
+
       trim: true,
     },
   },

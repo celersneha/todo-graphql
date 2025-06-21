@@ -9,6 +9,7 @@ async function createApolloServer() {
     resolvers: {
       ...resolvers,
     },
+    introspection: true, // Enable introspection for development
   });
   return server;
 }
