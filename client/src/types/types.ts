@@ -12,3 +12,24 @@ export interface AuthResponse {
   token?: string;
   user?: User;
 }
+
+export interface Todo {
+  _id: string;
+  title: string;
+  description?: string;
+  completed: boolean;
+  userId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface TodoResponse {
+  success: boolean;
+  message: string;
+  todo?: Todo;
+}
+export interface TodosResponse {
+  success: boolean;
+  message: string;
+  todos?: Todo[];
+}
