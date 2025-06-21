@@ -34,6 +34,7 @@ const mutations = {
     if (!context || !context.user) {
       throw new Error("Unauthorized Access");
     }
+    console.log("context:", context);
     const res = await TodoService.createTodo({
       ...input,
       userId: context.user.id,
