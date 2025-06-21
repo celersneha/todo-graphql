@@ -29,7 +29,7 @@ type TodosResponse {
 input CreateTodoInput {
     title: String!
     description: String
-    userId: ID!
+   
 }
 
 
@@ -38,7 +38,7 @@ input UpdateTodoInput {
     title: String
     description: String
     completed: Boolean
-    userId: ID!
+  
 }
 
 type Query {
