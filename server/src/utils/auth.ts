@@ -21,7 +21,13 @@ export const getContext = async ({ req }: { req: any }) => {
       const decodedToken = verifyToken(token);
       const user = await User.findById(decodedToken.id).select("-password");
       if (user) {
-        return { user };
+        return {
+          user: {
+            id: user?._id?.toString(),
+            email: user?.email,
+            name: user?.username,
+          },
+        };
       }
     } catch (error) {
       // Token verification failed, but we'll still proceed with empty context
