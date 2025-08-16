@@ -133,15 +133,28 @@ The API provides the following operations:
 - Input validation and sanitization
 - CORS protection
 
+
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+We welcome all contributions to enhance TickTask! Follow these simple steps to contribute:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to your branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. **Fork the Repository**: Create a copy of the repo on your GitHub.
+2. **Create a Branch**: Work on a new feature or fix in an isolated branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit Changes**: Make sure to write clear and descriptive commit messages:
+   ```bash
+   git commit -m "Add your feature description"
+   ```
+4. **Push Changes**: Push the changes to your forked repository:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Submit a Pull Request**: Open a PR to merge your changes into the main repo.
+
+We’re excited to collaborate and grow TickTask with your help! 😊
+
 
 ## 🙏 Acknowledgements
 
@@ -155,6 +168,6 @@ Contributions are welcome! Feel free to:
 
 **Sneha Sharma**
 
-- GitHub: [@SnehaSharma245](https://github.com/SnehaSharma245)
-- LinkedIn: [Sneha Sharma](https://linkedin.com/in/snehasharma245)
-- Email: snehav2109@gmail.com
+- GitHub: [@celersneha](https://github.com/celersneha)
+- LinkedIn: [Sneha Sharma](https://linkedin.com/in/celersneha)
+- Email: celersneha@gmail.com
