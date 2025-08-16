@@ -168,6 +168,6 @@ We’re excited to collaborate and grow TickTask with your help! 😊
 
 **Sneha Sharma**
 
-- GitHub: [@SnehaSharma245](https://github.com/SnehaSharma245)
-- LinkedIn: [Sneha Sharma](https://linkedin.com/in/snehasharma245)
-- Email: snehav2109@gmail.com
+- GitHub: [@celersneha](https://github.com/celersneha)
+- LinkedIn: [Sneha Sharma](https://linkedin.com/in/celersneha)
+- Email: celersneha@gmail.com
