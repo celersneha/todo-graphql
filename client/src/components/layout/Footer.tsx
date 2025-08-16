@@ -20,19 +20,19 @@ function Footer() {
           </p>
           <div className="flex space-x-8 mb-10">
             <a
-              href="https://www.linkedin.com/in/ss0807/"
+              href="https://www.linkedin.com/in/celersneha/"
               className="text-gray-300 hover:text-[#45e3ff] transition-colors"
             >
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="https://x.com/SnehaDevs"
+              href="https://x.com/celersneha"
               className="text-gray-300 hover:text-[#45e3ff] transition-colors"
             >
               <Twitter className="h-6 w-6" />
             </a>
             <a
-              href="https://github.com/SnehaSharma245"
+              href="https://github.com/celersneha"
               className="text-gray-300 hover:text-[#45e3ff] transition-colors"
             >
               <Github className="h-6 w-6" />
